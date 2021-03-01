@@ -5,6 +5,7 @@ import {useState} from 'react';
 import "bootstrap/dist/css/bootstrap.min.css";
 import MovieList from "./component/MovieList"; 
 import Filter from "./component/Filter";
+import Navi from "./component/Navi";
 
 
 
@@ -50,7 +51,7 @@ const search = (word) => {
 
     return (
       <div className="App-header">
-  
+         <Navi/>
         <h1 style={{textAlign:'center', color:'red'}}>movie app</h1>
         <Filter keyRate={keyRate} setKeyRate={setKeyRate} search={search}  />
         <MovieList
