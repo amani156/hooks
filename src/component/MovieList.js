@@ -6,7 +6,7 @@ import StarRatingComponent from 'react-star-rating-component';
 import { Button } from "react-bootstrap";
 import React, { useState } from "react";
 import AddModal from "./AddModal";
-
+import { Link } from "react-router-dom";
 
 const MovieList = (props, { movies, addMovie }) => {
     const [show, setShow] = useState("");
@@ -32,11 +32,11 @@ const MovieList = (props, { movies, addMovie }) => {
                         <Card.Img variant="top" src={el.image} />
                         <Card.Body>
                             <Card.Title>{el.name}</Card.Title>
-                            <Card.Text>{el.year} </Card.Text>
-                            <StarRatingComponent name="rate" starCount={5} value={el.rate} />
                         </Card.Body>
+                        <Link to={`/movies/${el.id}`}> movie info</Link>
                     </Card>
                       ))}
+                     
                </div>
             
 

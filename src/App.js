@@ -6,6 +6,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import MovieList from "./component/MovieList"; 
 import Filter from "./component/Filter";
 import Navi from "./component/Navi";
+import { BrowserRouter, Route, Link } from "react-router-dom";
+import Info from './component/Info';
 
 
 
@@ -51,7 +53,9 @@ const search = (word) => {
 
     return (
       <div className="App-header">
-         <Navi/>
+        <BrowserRouter>
+
+        <Navi/>
         <h1 style={{textAlign:'center', color:'red'}}>movie app</h1>
         <Filter keyRate={keyRate} setKeyRate={setKeyRate} search={search}  />
         <MovieList
@@ -63,11 +67,15 @@ const search = (word) => {
 
         addMovie ={addMovie}
         />
+        <Route path="/movies/id" render={(props)=>  <Info {...props} movies={movies}/>}/>
+        </BrowserRouter>
+        
         
         
       </div>
     )
   }
+
 
 
 export default App
